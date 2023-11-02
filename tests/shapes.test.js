@@ -1,6 +1,10 @@
 // Constructor shapes is imported.
-const shape = require('../shapes.js');
+const SHAPE = require('../lib/shapes.js');
 
-const shape = new Triangle();
-shape.setColor("blue");
-expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
+describe('Shape', () => {
+    test('should render header with the date', () => {
+      const expectedHtml = '<polygon points="150, 18 244, 182 56, 182" fill="${backgroundColor}" />';
+      const shape = new SHAPE();
+      expect(shape.render()).toEqual(expectedHtml);
+    });
+  });
